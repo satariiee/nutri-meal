@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NutriMeal — Makan Sehat, Lebih Personal</title>
+<meta name="description" content="NutriMeal — Pesan makanan sehat secara online. Menu terukur sesuai tujuan berat badan, kebutuhan nutrisi, dan anggaran Anda.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--orange:#e86108;--deep:#c84d00;--cream:#fffaf5;--pale:#fff0e3;--ink:#30271f;--muted:#7b6d61;--line:#f0e2d6}
+*{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;line-height:1.55}button,input,select,textarea{font:inherit}button{cursor:pointer}.nav{position:sticky;top:0;background:#ffffffee;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);z-index:5}.navin{max-width:1120px;margin:auto;padding:13px 22px;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}.brand{font-weight:900;font-size:24px;letter-spacing:-1px;color:var(--orange);display:flex;gap:9px;align-items:center}.logo{width:42px;height:42px;border-radius:13px;background:var(--pale);display:grid;place-items:center;font-size:23px}.brand small{display:block;color:#9a887a;font-size:9px;letter-spacing:1.3px}.links{display:flex;gap:5px;flex-wrap:wrap}.navbtn{border:0;background:transparent;padding:9px 12px;border-radius:10px;color:#65584d;transition:background .2s,color .2s}.navbtn.active,.navbtn:hover{background:var(--pale);color:var(--deep);font-weight:750}.count{background:var(--orange);color:#fff;border-radius:50%;display:inline-grid;place-items:center;width:19px;height:19px;font-size:11px;transition:transform .25s}.count.bump{animation:bump .35s ease}@keyframes bump{0%{transform:scale(1)}50%{transform:scale(1.35)}100%{transform:scale(1)}}.wrap{max-width:1120px;margin:auto;padding:0 22px}.page{display:none}.page.active{display:block}.hero{padding:44px 0 28px}.herogrid{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}.kicker{display:inline-block;background:#ffead9;color:var(--deep);padding:6px 11px;border-radius:30px;font-size:12px;font-weight:800}h1{font-size:clamp(36px,5vw,58px);line-height:1.06;letter-spacing:-2px;margin:18px 0}h1 em{color:var(--orange);font-style:normal}.sub{color:var(--muted);max-width:500px;line-height:1.8}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{border:0;border-radius:12px;padding:12px 17px;background:var(--orange);color:#fff;font-weight:800;box-shadow:0 5px 14px #e861081b;transition:background .2s,transform .15s}.btn:hover{background:var(--deep);transform:translateY(-1px)}.btn:active{transform:translateY(0)}.btn.alt{background:#fff;color:var(--deep);border:1px solid #efc4a3;box-shadow:none}.btn.alt:hover{background:var(--pale)}.btn.wa{background:#25d366;color:#fff;font-size:16px;padding:14px 20px;display:flex;align-items:center;gap:10px;justify-content:center}.btn.wa:hover{background:#1da851}.visual{min-height:300px;border-radius:26px;background:linear-gradient(140deg,#ffe0bd,#ffb56d 56%,#ed741e);padding:22px;position:relative;display:grid;place-items:center;overflow:hidden}.plate{width:100%;height:100%;min-height:300px;position:absolute;inset:0;border:0;border-radius:26px;box-shadow:none;transform:none;overflow:hidden;background:#fff}.plate img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .35s}.hero-caption{position:absolute;bottom:18px;left:18px;background:#fffdf8ee;color:var(--ink);padding:9px 13px;border-radius:12px;font-weight:800;font-size:12px;z-index:2}.hero-controls{position:absolute;right:16px;top:50%;transform:translateY(-50%);display:flex;gap:8px;z-index:3}.hero-controls button{border:0;border-radius:50%;width:38px;height:38px;background:#ffffffed;color:var(--deep);font-size:21px;font-weight:900;transition:background .2s}.hero-controls button:hover{background:#fff}.hero-dots{position:absolute;bottom:22px;right:20px;display:flex;gap:6px;z-index:3}.hero-dots button{border:0;border-radius:99px;width:8px;height:8px;padding:0;background:#ffffff9c;transition:width .3s,background .3s}.hero-dots button.active{width:22px;background:#fff}.foodpic{height:180px;display:block;overflow:hidden;background:#f3e8db}.foodpic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}.card:hover .foodpic img{transform:scale(1.05)}.goalpic{height:175px;overflow:hidden;background:#f5e8dc}.goalpic img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}.card:hover .goalpic img{transform:scale(1.05)}.float{position:absolute;background:#fff;border-radius:13px;padding:10px 13px;box-shadow:0 8px 25px #83380c20;font-size:12px;font-weight:800}.float.one{top:24px;left:15px}.float.two{bottom:24px;right:15px}.section{padding:22px 0 35px;scroll-margin-top:95px}.heading{font-size:26px;letter-spacing:-.7px;margin:0 0 5px}.muted{color:var(--muted)}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:20px}.card{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;min-width:0;transition:box-shadow .25s,transform .25s}.card:hover{box-shadow:0 8px 28px #e8610815;transform:translateY(-2px)}.foodpic{height:125px;display:grid;place-items:center;font-size:63px;background:linear-gradient(135deg,#ffeedc,#ffcc9d)}.green{background:linear-gradient(135deg,#e4efd9,#a8c58b)}.pink{background:linear-gradient(135deg,#ffe4d9,#f4b2a0)}.cardbody{padding:15px}.foodname{font-size:16px;font-weight:850;margin:0}.tag{display:inline-block;background:var(--pale);color:var(--deep);padding:4px 8px;border-radius:20px;font-size:11px;font-weight:750;margin:4px 3px 4px 0}.cardfoot{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-top:12px}.price{font-size:17px;font-weight:900;color:var(--deep)}.add{background:var(--pale);color:var(--deep);border:0;border-radius:9px;padding:8px 11px;font-weight:850;transition:background .2s}.add:hover{background:#ffd9b8}.panel{background:#fff;border:1px solid var(--line);border-radius:19px;padding:22px;margin-top:17px}.formgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.field label{display:block;font-size:12px;font-weight:800;margin-bottom:6px;color:#63564b}.field input,.field select,.field textarea{width:100%;padding:11px 12px;border:1px solid #e8d9cc;border-radius:10px;background:#fffdfa;color:var(--ink);transition:border-color .2s,box-shadow .2s}.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--orange);box-shadow:0 0 0 3px #e8610820}.result{display:none;margin-top:17px;background:#fff5e9;border:1px solid #f5d4b6;border-radius:15px;padding:17px}.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:13px 0}.stat{background:#fff;border-radius:11px;padding:12px}.stat strong{display:block;font-size:21px;color:var(--deep)}.stat span{font-size:11px;color:var(--muted)}.banner{background:var(--orange);color:#fff;border-radius:20px;padding:22px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}.banner p{margin:5px 0 0;color:#ffead9}.banner .btn{background:#fff;color:var(--deep)}.filters{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.filters button{border:1px solid #f0d7c3;border-radius:25px;padding:8px 14px;background:#fff;color:#65574b;transition:background .2s,color .2s,border-color .2s}.filters button.active{background:var(--orange);border-color:var(--orange);color:#fff}.cartrow{display:flex;justify-content:space-between;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:center}.qty{display:flex;align-items:center;gap:9px}.qty button{border:1px solid #ead8c8;background:#fff;border-radius:7px;width:27px;height:27px;color:var(--deep);transition:background .15s}.qty button:hover{background:var(--pale)}.empty{text-align:center;padding:40px 15px;color:#85766b}.footer{border-top:1px solid var(--line);padding:23px 0;color:#85766b;font-size:12px}.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(20px);background:#30271f;color:#fff;padding:12px 18px;border-radius:12px;z-index:20;display:none;max-width:90%;box-shadow:0 8px 30px #0002;opacity:0;transition:opacity .3s,transform .3s}.toast.show{display:block;opacity:1;transform:translateX(-50%) translateY(0)}
+.qris-section{text-align:center;margin-top:22px;padding:20px;background:#fff5e9;border:1px solid #f5d4b6;border-radius:15px}.qris-section img{max-width:280px;width:100%;height:auto;border-radius:12px;border:3px solid var(--line);margin:12px 0}.qris-label{font-weight:800;color:var(--deep);font-size:15px;margin-bottom:6px}.qris-hint{font-size:13px;color:var(--muted);margin-top:8px;line-height:1.6}.qris-total{font-size:22px;font-weight:900;color:var(--deep);margin:10px 0;letter-spacing:-.5px}
+.delivery-radio{display:flex;flex-direction:column;gap:8px;margin-top:6px}.delivery-radio label{display:flex;align-items:center;gap:10px;padding:10px 14px;background:#fffdfa;border:1px solid #e8d9cc;border-radius:10px;cursor:pointer;font-size:14px;transition:border-color .2s,background .2s}.delivery-radio label:hover{background:var(--pale)}.delivery-radio input[type=radio]:checked+span{font-weight:800}.delivery-radio label:has(input:checked){border-color:var(--orange);background:#fff5e9}
+.wa-note{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.6;background:#f9f3ec;padding:12px 14px;border-radius:10px}
+@media(max-width:700px){.wrap{padding:0 15px}.navin{padding:11px 15px}.links{width:100%;justify-content:space-between}.navbtn{padding:7px 8px;font-size:12px}.herogrid{grid-template-columns:1fr;gap:20px}.hero{padding-top:28px}.visual{min-height:220px}.plate{min-height:220px}.foodpic{height:125px}.cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.foodpic{height:100px;font-size:52px}.cardbody{padding:11px}.foodname{font-size:14px}.price{font-size:15px}.formgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stat{padding:9px 7px}.stat strong{font-size:17px}.panel{padding:15px}.heading{font-size:22px}.qris-section img{max-width:220px}}@media(max-width:390px){.cards{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="navin"><div class="brand"><span class="logo">🥗</span><span>Nutri<span style="color:#30271f">Meal</span><small>EAT SMART, LIVE WELL</small></span></div><nav class="links"><button class="navbtn active" data-page="home" id="nav-home">Beranda</button><button class="navbtn" data-page="reco" id="nav-reco">Rekomendasi</button><button class="navbtn" data-page="menu" id="nav-menu">Menu</button><button class="navbtn" data-page="cart" id="nav-cart">Keranjang <span class="count" id="count">0</span></button><button class="navbtn" data-page="payment" id="nav-payment">Pembayaran</button></nav></div></header>
+<main class="wrap">
+<section class="page active" id="home"><div class="hero"><div class="herogrid"><div><span class="kicker">✦ MAKANAN SEHAT, LEBIH PERSONAL</span><h1>Makan enak.<br><em>Capai targetmu.</em></h1><p class="sub">Temukan menu sehat yang sesuai tujuan berat badan, kebutuhan nutrisi, dan anggaranmu. Semua dalam satu tempat.</p><div class="actions"><button class="btn" data-goto="reco">Temukan Menu Saya →</button><button class="btn alt" data-goto="menu">Lihat Menu</button></div><p class="muted" style="font-size:12px;margin-top:22px">✓ Menu terukur　 ✓ Sesuai anggaran　 ✓ Pesan online</p></div><div class="visual" aria-label="Galeri foto makanan sehat"><div class="plate"><img id="heroSlide" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=85" alt="Foto salad sehat asli"></div><div class="float one" id="heroLabel">🥦 Fresh & colorful</div><div class="float two">💪 Eat well, feel strong</div><div class="hero-controls"><button type="button" id="heroPrev" aria-label="Foto sebelumnya">‹</button><button type="button" id="heroNext" aria-label="Foto berikutnya">›</button></div><div class="hero-dots" id="heroDots"><button class="active" type="button" aria-label="Foto 1"></button><button type="button" aria-label="Foto 2"></button><button type="button" aria-label="Foto 3"></button></div><div class="hero-caption">Real photography · Healthy lifestyle</div></div></div></div>
+<div class="section"><h2 class="heading">Mulai dari tujuanmu</h2><p class="muted">Pilih tujuan untuk melihat menu yang sesuai.</p><div class="cards" style="grid-template-columns:repeat(2,minmax(0,1fr))"><button class="card" data-goal="loss" style="text-align:left;padding:0;color:inherit"><div class="goalpic"><img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=85" alt="Makanan sehat dengan sayuran dan protein" loading="lazy"></div><div class="cardbody"><h3 class="foodname">Weight Loss</h3><p class="muted">Menu berporsi terukur untuk mendukung penurunan berat badan.</p><b style="color:var(--deep)">Pilih tujuan →</b></div></button><button class="card" data-goal="gain" style="text-align:left;padding:0;color:inherit"><div class="goalpic"><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=900&q=85" alt="Latihan kekuatan di gym untuk mendukung weight gain" loading="lazy"></div><div class="cardbody"><h3 class="foodname">Weight Gain</h3><p class="muted">Menu untuk mendukung kenaikan berat badan dengan asupan energi cukup.</p><b style="color:var(--deep)">Pilih tujuan →</b></div></button></div></div>
+<div class="section"><div class="banner"><div><strong style="font-size:20px">Menu sehat, sesuai kantong.</strong><p>Atur anggaranmu dan temukan pilihan yang cocok.</p></div><button class="btn" data-goto="reco">Mulai sekarang →</button></div></div></section>
+<section class="page" id="reco"><div class="section"><span class="kicker">REKOMENDASI PERSONAL</span><h2 class="heading" style="margin-top:12px">Kenali kebutuhanmu</h2><p class="muted">Isi data berikut untuk mendapatkan estimasi dan saran menu. Hasil ini simulasi awal, bukan diagnosis medis.</p><div class="panel"><form id="profile"><div class="formgrid">
+<div class="field"><label>Usia (tahun)</label><input id="age" type="number" min="18" max="100" value="20" required></div><div class="field"><label>Jenis kelamin untuk rumus</label><select id="sex"><option value="f">Perempuan</option><option value="m">Laki-laki</option></select></div><div class="field"><label>Aktivitas harian</label><select id="activity"><option value="1.2">Ringan / banyak duduk</option><option value="1.375">Ringan aktif</option><option value="1.55">Cukup aktif</option><option value="1.725">Sangat aktif</option></select></div>
+<div class="field"><label>Tinggi badan (cm)</label><input id="height" type="number" min="100" max="230" value="160" required></div><div class="field"><label>Berat saat ini (kg)</label><input id="weight" type="number" min="30" max="300" step=".1" value="55" required></div><div class="field"><label>Target berat (kg)</label><input id="target" type="number" min="30" max="300" step=".1" value="52" required></div>
+<div class="field"><label>Tujuan</label><select id="goal"><option value="loss">Menurunkan berat</option><option value="gain">Menaikkan berat</option><option value="maintain">Mempertahankan berat</option></select></div><div class="field"><label>Anggaran per porsi</label><select id="budget"><option value="50000">Rp50.000</option><option value="60000" selected>Rp60.000</option><option value="70000">Rp70.000</option><option value="90000">Rp90.000</option><option value="100000">Rp100.000</option></select></div><div class="field"><label>Preferensi menu</label><select id="pref"><option value="all">Semua menu</option><option value="chicken">Ayam</option><option value="fish">Ikan</option><option value="beef">Daging sapi</option><option value="plant">Nabati</option></select></div></div><button class="btn" type="submit" style="margin-top:18px;width:100%">Hitung & Cari Rekomendasi</button></form><div class="result" id="result"><b>Ringkasan kebutuhanmu</b><div class="stats"><div class="stat"><span>BMI</span><strong id="bmi">—</strong><span id="bmicat">Indikator</span></div><div class="stat"><span>Estimasi kalori/hari</span><strong id="cal">—</strong><span>kkal/hari</span></div><div class="stat"><span>Target berat</span><strong id="targetshow">—</strong><span>kg</span></div></div><p id="summary"></p><button class="btn" id="showmenu">Lihat Menu Rekomendasi →</button></div></div></div></section>
+<section class="page" id="menu"><div class="section"><span class="kicker">MENU NUTRIMEAL</span><h2 class="heading" style="margin-top:12px">Pilihan makanan sehat</h2><p class="muted">Pilih makanan berdasarkan tujuan dan anggaranmu.</p><div class="filters" id="filters"><button class="active" data-filter="all">Semua</button><button data-filter="loss">Weight Loss</button><button data-filter="gain">Weight Gain</button><button data-filter="within">Sesuai budget</button></div><div class="cards" id="menugrid"></div><p class="muted" style="font-size:12px;margin-top:13px">*Nama menu, harga, dan kalori merujuk pada listing menu online. Makronutrien yang tidak tercantum ditandai belum tersedia. Harga dapat berubah; ini prototype, bukan aplikasi resmi restoran.</p><p class="muted" style="font-size:12px">Sumber menu: <a href="https://www.carikulinerindonesia.com/11393732/fit-fuel-salad-and-smoothie-bar-sukajadi" target="_blank" rel="noopener">Fit Fuel</a> · <a href="https://www.carikulinerindonesia.com/10451334/saladbar-by-hadikitchen-paris-van-java" target="_blank" rel="noopener">Saladbar by Hadikitchen PVJ</a>.</p></div></section>
+<section class="page" id="cart"><div class="section"><span class="kicker">PESANANMU</span><h2 class="heading" style="margin-top:12px">Keranjang belanja</h2><p class="muted">Periksa pilihanmu sebelum checkout.</p><div class="panel" id="cartbody"></div></div></section>
+<section class="page" id="payment"><div class="section"><span class="kicker">CHECKOUT & PEMBAYARAN</span><h2 class="heading" style="margin-top:12px">Selesaikan pesananmu</h2><p class="muted">Isi data pengiriman, periksa rincian pesanan, dan lakukan pembayaran via QRIS.</p>
+<div class="panel"><div id="paymentEmpty" class="empty" style="display:none"><div style="font-size:43px">🛒</div><h3>Keranjangmu masih kosong</h3><p>Pilih menu terlebih dahulu sebelum masuk ke pembayaran.</p><button class="btn" data-goto="menu">Jelajahi Menu</button></div>
+<div id="paymentContent">
+<h3 style="margin-top:0">1. Data Penerima</h3>
+<div class="formgrid">
+<div class="field"><label for="payName">Nama lengkap</label><input id="payName" required placeholder="Nama lengkap"></div>
+<div class="field"><label for="payPhone">No. HP / WhatsApp</label><input id="payPhone" required type="tel" placeholder="08xxxxxxxxxx"></div>
+<div class="field" style="grid-column:1/-1"><label for="payAddress">Alamat pengiriman</label><textarea id="payAddress" required placeholder="Jalan, nomor rumah, RT/RW, kelurahan, kecamatan, kota" rows="2" style="resize:vertical"></textarea></div>
+</div>
+<h3 style="margin-top:20px">2. Pilihan Pengiriman</h3>
+<div class="delivery-radio" id="deliveryRadio">
+<label><input type="radio" name="deliveryType" value="8000" checked><span>🚚 Reguler — <strong>Rp8.000</strong></span></label>
+<label><input type="radio" name="deliveryType" value="15000"><span>⚡ Instan — <strong>Rp15.000</strong></span></label>
+<label><input type="radio" name="deliveryType" value="0"><span>🏪 Ambil sendiri — <strong>Gratis</strong></span></label>
+</div>
+
+<div id="paymentSummary" class="panel" style="background:var(--cream);margin-top:22px"></div>
+
+<hr style="border:0;border-top:1px solid var(--line);margin:22px 0">
+<h3>3. Metode Pembayaran: QRIS</h3>
+<div class="qris-section" id="qrisSection">
+<div class="qris-label">Scan QRIS untuk membayar</div>
+<div class="qris-total" id="qrisTotal">Rp0</div>
+<img src="assets/qris.png" alt="QRIS NutriMeal" id="qrisImage">
+<div class="qris-hint">
+📱 Buka aplikasi e-wallet atau mobile banking yang mendukung QRIS, lalu pindai kode di atas.<br>
+Pastikan jumlah yang dibayarkan sesuai dengan total pembayaran.
+</div>
+</div>
+
+<hr style="border:0;border-top:1px solid var(--line);margin:22px 0">
+<h3>4. Konfirmasi Pesanan</h3>
+<div class="wa-note">
+📋 Setelah melakukan pembayaran, tekan tombol di bawah untuk mengirim rincian pesanan ke admin NutriMeal via WhatsApp. <strong>Lampirkan bukti pembayaran (screenshot/foto)</strong> langsung di chat WhatsApp setelah pesan terkirim.
+</div>
+<button class="btn wa" type="button" id="waConfirmBtn" style="width:100%;margin-top:16px">
+<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+Konfirmasi Pembayaran via WhatsApp
+</button>
+<p class="muted" style="font-size:12px;margin-top:12px;margin-bottom:0">Admin akan memverifikasi pembayaran secara manual melalui mutasi rekening. Pesanan diproses setelah pembayaran terkonfirmasi.</p>
+</div>
+</div></div></section>
+<footer class="footer"><b style="color:var(--deep)">NutriMeal</b> · Makan cerdas, hidup lebih sehat. <span style="float:right">© 2026 NutriMeal</span></footer></main>
+<div class="toast" id="toast"></div>
+<script>
+/* ============ CONFIG ============ */
+const WA_ADMIN_NUMBER = '6285159950600';
+
+/* ============ MENU DATA ============ */
+const foods=[
+ {id:1,image:'https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/d63936d0-7e76-4a95-a6f7-2479c5e4c923_418e3c01-c438-442b-8676-ca2c32ca6614.jpeg?w=900',name:'Chicken Salad Bowl',desc:'Salad bowl dengan protein ayam dan dressing pilihan',restaurant:'Fit Fuel Salad & Smoothie Bar',price:60800,cal:178,protein:null,carbs:null,fat:null,goal:['loss','gain','maintain'],pref:'chicken',emoji:'🥗',tone:'green',tag:'Salad Bowl'},
+ {id:2,image:'https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/655c7deb-2d42-46a1-9439-76e2bed6253e_046c5272-84d3-4a2f-b89e-fb51ca79e9af.jpeg?w=900',name:'Smoked Beef Salad Bowl',desc:'Salad bowl dengan protein daging asap',restaurant:'Fit Fuel Salad & Smoothie Bar',price:65000,cal:172,protein:null,carbs:null,fat:null,goal:['loss','gain','maintain'],pref:'beef',emoji:'🥩',tone:'pink',tag:'Salad Bowl'},
+ {id:3,image:'https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/05221114-d98d-441a-986b-e84d9da0601c_eae7f757-6477-4075-90cc-ce77338b3997.jpeg?w=900',name:'Vegan Salad Bowl',desc:'Salad bowl dengan protein tahu dan tempe',restaurant:'Fit Fuel Salad & Smoothie Bar',price:53520,cal:130,protein:null,carbs:null,fat:null,goal:['loss','gain','maintain'],pref:'plant',emoji:'🥑',tone:'green',tag:'Vegan'},
+ {id:4,image:'https://i0.wp.com/i.gojekapi.com/darkroom/gofood-indonesia/v2/images/uploads/215eb91d-dbb7-493e-844c-8dc437ac134b_a6b2e6f7-64d8-432f-979c-72cefe67976e.jpeg?w=900',name:'Classic Salad Bowl',desc:'Salad bowl tanpa tambahan protein',restaurant:'Fit Fuel Salad & Smoothie Bar',price:52400,cal:68,protein:null,carbs:null,fat:null,goal:['loss','maintain'],pref:'plant',emoji:'🥬',tone:'green',tag:'Salad Bowl'},
+ {id:5,image:'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85',name:'Salmon Salad Bowl',desc:'Salad bowl dengan protein salmon',restaurant:'Fit Fuel Salad & Smoothie Bar',price:86000,cal:137,protein:null,carbs:null,fat:null,goal:['loss','gain','maintain'],pref:'fish',emoji:'🐟',tone:'pink',tag:'Salad Bowl'},
+ {id:6,image:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85',name:'Poke Bowl',desc:'Nasi merah, sayuran, edamame, wakame, dan tuna',restaurant:'Fit Fuel Salad & Smoothie Bar',price:59000,cal:264,protein:null,carbs:null,fat:null,goal:['loss','gain','maintain'],pref:'fish',emoji:'🍚',tone:'',tag:'Warm Bowl'},
+ {id:7,image:'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=85',name:'Tori Diet Bowl',desc:'Nasi merah, sayuran, ayam, telur, tomat, dan edamame',restaurant:'Fit Fuel Salad & Smoothie Bar',price:59000,cal:402,protein:null,carbs:null,fat:null,goal:['loss','gain','maintain'],pref:'chicken',emoji:'🍗',tone:'',tag:'Warm Bowl'},
+ {id:8,image:'https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=900&q=85',name:'Caesar Supreme (Bowl)',desc:'Mixed greens, parmesan, telur, ayam panggang, smoked beef, dan Caesar dressing',restaurant:'Saladbar by Hadikitchen — PVJ Bandung',price:72000,cal:410,protein:28,carbs:17,fat:25,goal:['loss','gain','maintain'],pref:'chicken',emoji:'🥗',tone:'green',tag:'Salad Bowl'},
+ {id:9,image:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85',name:'Mamma Mia (Bowl)',desc:'Mixed greens, telur, jagung, brokoli, makaroni, smoked beef, dan tenderloin',restaurant:'Saladbar by Hadikitchen — PVJ Bandung',price:72000,cal:430,protein:27,carbs:24,fat:25,goal:['loss','gain','maintain'],pref:'beef',emoji:'🥦',tone:'',tag:'Salad Bowl'},
+ {id:10,image:'https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=900&q=85',name:'Under The Sea (Bowl)',desc:'Mixed greens, salmon asap, udang, sayuran, telur, dan parmesan',restaurant:'Saladbar by Hadikitchen — PVJ Bandung',price:78000,cal:432,protein:24,carbs:30,fat:23,goal:['loss','gain','maintain'],pref:'fish',emoji:'🐟',tone:'pink',tag:'Salad Bowl'},
+ {id:11,image:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=85',name:'Viva La Vegan (Bowl)',desc:'Mixed greens, edamame, kacang polong, jamur, tahu, dan tempe',restaurant:'Saladbar by Hadikitchen — PVJ Bandung',price:66000,cal:283,protein:12,carbs:7,fat:23,goal:['loss','gain','maintain'],pref:'plant',emoji:'🌱',tone:'green',tag:'Vegan Bowl'},
+ {id:12,image:'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=85',name:'Daniel Hadi Favorito Bowl',desc:'Mixed greens, parmesan, telur, brokoli, paprika, salmon, udang, dan tempe',restaurant:'Saladbar by Hadikitchen — PVJ Bandung',price:81600,cal:363,protein:25,carbs:12,fat:24,goal:['loss','gain','maintain'],pref:'fish',emoji:'🍣',tone:'pink',tag:'Salad Bowl'},
+ {id:13,image:'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=900&q=85',name:'Kungfu Chicken (Bowl)',desc:'Mixed greens, telur, parmesan, edamame, bawang, dan paprika',restaurant:'Saladbar by Hadikitchen — PVJ Bandung',price:72000,cal:273,protein:23,carbs:7,fat:17,goal:['loss','gain','maintain'],pref:'chicken',emoji:'🍗',tone:'',tag:'Salad Bowl'}
+];
+
+/* ============ STATE ============ */
+let cart={},filter='all',budget=60000,pref='all';
+const $=id=>document.getElementById(id),money=n=>'Rp'+Math.round(n).toLocaleString('id-ID');
+
+/* ============ TOAST ============ */
+function toast(s){const t=$('toast');t.textContent=s;t.classList.add('show');clearTimeout(t._timer);t._timer=setTimeout(()=>t.classList.remove('show'),2500)}
+
+/* ============ NAV & PAGES ============ */
+function page(p){document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));$(p).classList.add('active');document.querySelectorAll('[data-page]').forEach(b=>b.classList.toggle('active',b.dataset.page===p));if(p==='menu')renderMenu();if(p==='cart')renderCart();if(p==='payment')renderPaymentPage();window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('[data-page]').forEach(b=>b.onclick=()=>page(b.dataset.page));document.querySelectorAll('[data-goto]').forEach(b=>b.onclick=()=>page(b.dataset.goto));document.querySelectorAll('[data-goal]').forEach(b=>b.onclick=()=>{$('goal').value=b.dataset.goal;filter=b.dataset.goal;page('reco')});
+
+/* ============ MENU ============ */
+function renderMenu(){let list=foods.filter(f=>(filter==='all'||filter==='within'||f.goal.includes(filter))&&(filter!=='within'||f.price<=budget)&&(pref==='all'||f.pref===pref));$('menugrid').innerHTML=list.length?list.map(f=>`<article class="card"><div class="foodpic"><img loading="lazy" src="${f.image}" alt="${f.name}" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80'"></div><div class="cardbody"><span class="tag">${f.tag}</span><h3 class="foodname">${f.name}</h3><p class="muted" style="font-size:12px">${f.restaurant}<br>${f.desc}</p><span class="tag">${f.cal} kkal*</span><span class="tag">${f.protein==null?"Protein: data belum tersedia":f.protein+" g protein"}</span><span class="tag">${f.carbs==null?"Karbo: data belum tersedia":f.carbs+" g karbo"}</span><span class="tag">${f.fat==null?"Lemak: data belum tersedia":f.fat+" g lemak"}</span><div class="cardfoot"><span class="price">${money(f.price)}</span><button class="add" data-add="${f.id}">+ Tambah</button></div></div></article>`).join(''):'<div class="empty" style="grid-column:1/-1">Belum ada menu sesuai filter. Coba pilihan lain atau naikkan budget.</div>';document.querySelectorAll('[data-add]').forEach(b=>b.onclick=()=>{cart[b.dataset.add]=(cart[b.dataset.add]||0)+1;countCart();toast('Menu ditambahkan ke keranjang!')});document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter===filter))}
+document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{filter=b.dataset.filter;renderMenu()});
+
+/* ============ RECOMMENDATION ============ */
+$('profile').onsubmit=e=>{e.preventDefault();let age=+$('age').value,h=+$('height').value,w=+$('weight').value,t=+$('target').value,sex=$('sex').value,act=+$('activity').value,g=$('goal').value;if(age<18||age>100||h<100||h>230||w<30||w>300||t<30||t>300){toast('Periksa kembali data yang dimasukkan.');return}let bmi=w/((h/100)**2),bmr=10*w+6.25*h-5*age+(sex==='m'?5:-161),maint=Math.round(bmr*act),cal=Math.round(maint+(g==='loss'?-300:g==='gain'?250:0));$('bmi').textContent=bmi.toFixed(1);$('bmicat').textContent=bmi<18.5?'Di bawah rentang acuan':bmi<25?'Rentang acuan umum':bmi<30?'Di atas rentang acuan':'Rentang obesitas menurut BMI';$('cal').textContent=cal.toLocaleString('id-ID');$('targetshow').textContent=t;$('summary').textContent='Estimasi kebutuhan energi pemeliharaan: '+maint.toLocaleString('id-ID')+' kkal/hari. Perhitungan ini bersifat ilustratif; kebutuhan nyata berbeda antarindividu. BMI adalah indikator skrining, bukan diagnosis.';$('result').style.display='block';budget=+$('budget').value;pref=$('pref').value;filter=g};
+$('showmenu').onclick=()=>page('menu');$('budget').onchange=()=>budget=+$('budget').value;$('pref').onchange=()=>pref=$('pref').value;
+
+/* ============ CART ============ */
+function countCart(){
+  const el=$('count');
+  el.textContent=Object.values(cart).reduce((a,b)=>a+b,0);
+  el.classList.remove('bump');void el.offsetWidth;el.classList.add('bump');
+}
+function renderCart(){let ids=Object.keys(cart).filter(id=>cart[id]>0);if(!ids.length){$('cartbody').innerHTML='<div class="empty"><div style="font-size:43px">🛒</div><h3>Keranjangmu masih kosong</h3><p>Yuk, pilih menu sehat favoritmu.</p><button class="btn" id="shop">Jelajahi Menu</button></div>';$('shop').onclick=()=>page('menu');return}let total=ids.reduce((s,id)=>s+foods.find(f=>f.id==id).price*cart[id],0);$('cartbody').innerHTML=ids.map(id=>{let f=foods.find(x=>x.id==id);return `<div class="cartrow"><div><strong>${f.emoji} ${f.name}</strong><div class="muted" style="font-size:12px">${money(f.price)} · ${f.cal} kkal</div></div><div class="qty"><button data-minus="${id}">−</button><b>${cart[id]}</b><button data-plus="${id}">+</button></div></div>`}).join('')+`<div style="display:flex;justify-content:space-between;padding-top:18px;font-size:17px;font-weight:900"><span>Subtotal</span><span style="color:var(--deep)">${money(total)}</span></div><p class="muted" style="font-size:12px">Biaya pengiriman dihitung saat checkout.</p><button class="btn" type="button" id="checkoutbtn" style="width:100%">Lanjut ke Pembayaran →</button>`;ids.forEach(id=>{document.querySelector(`[data-minus="${id}"]`).onclick=()=>{cart[id]--;if(cart[id]<=0)delete cart[id];countCart();renderCart()};document.querySelector(`[data-plus="${id}"]`).onclick=()=>{cart[id]++;countCart();renderCart()}});$('checkoutbtn').onclick=()=>{page('payment')}}
+
+/* ============ HELPERS ============ */
+function getSubtotal(){return Object.keys(cart).reduce((s,id)=>s+foods.find(f=>f.id==id).price*cart[id],0)}
+function getSelectedDelivery(){const checked=document.querySelector('input[name="deliveryType"]:checked');return checked?+checked.value:8000}
+function getDeliveryLabel(){const v=getSelectedDelivery();return v===0?'Ambil sendiri':v===15000?'Instan':'Reguler'}
+
+/* ============ PAYMENT PAGE ============ */
+function renderPaymentPage(){
+  const ids=Object.keys(cart).filter(id=>cart[id]>0);
+  if(!ids.length){
+    $('paymentContent').style.display='none';
+    $('paymentEmpty').style.display='block';
+    return;
+  }
+  $('paymentContent').style.display='block';
+  $('paymentEmpty').style.display='none';
+  renderPaymentSummary();
+}
+
+function renderPaymentSummary(){
+  const ids=Object.keys(cart).filter(id=>cart[id]>0);
+  if(!ids.length)return;
+  const subtotal=getSubtotal();
+  const delivery=getSelectedDelivery();
+  const total=subtotal+delivery;
+  const rows=ids.map(id=>{let f=foods.find(x=>x.id==id);return `<div style="display:flex;justify-content:space-between;gap:12px;padding:5px 0"><span>${f.emoji} ${f.name} × ${cart[id]}</span><strong>${money(f.price*cart[id])}</strong></div>`}).join('');
+  $('paymentSummary').innerHTML='<h3 style="margin-top:0">Rincian Pesanan</h3>'+rows+'<hr style="border:0;border-top:1px solid var(--line);margin:12px 0"><div style="display:flex;justify-content:space-between;padding:4px 0"><span>Subtotal makanan</span><strong>'+money(subtotal)+'</strong></div><div style="display:flex;justify-content:space-between;padding:4px 0"><span>Ongkir ('+getDeliveryLabel()+')</span><strong>'+(delivery===0?'Gratis':money(delivery))+'</strong></div><div style="display:flex;justify-content:space-between;padding:10px 0 0;font-size:19px;color:var(--deep)"><strong>Total Pembayaran</strong><strong>'+money(total)+'</strong></div>';
+  $('qrisTotal').textContent=money(total);
+}
+
+/* Delivery radio change */
+document.querySelectorAll('input[name="deliveryType"]').forEach(r=>{r.onchange=renderPaymentSummary});
+
+/* ============ WHATSAPP CONFIRMATION ============ */
+$('waConfirmBtn').onclick=function(){
+  const ids=Object.keys(cart).filter(id=>cart[id]>0);
+  if(!ids.length){toast('Keranjang kosong. Pilih menu terlebih dahulu.');page('menu');return}
+
+  const name=$('payName').value.trim();
+  const phone=$('payPhone').value.trim();
+  const address=$('payAddress').value.trim();
+
+  if(!name){toast('Mohon isi nama lengkap.');$('payName').focus();return}
+  if(!phone){toast('Mohon isi nomor HP/WhatsApp.');$('payPhone').focus();return}
+  if(!address){toast('Mohon isi alamat pengiriman.');$('payAddress').focus();return}
+
+  const subtotal=getSubtotal();
+  const delivery=getSelectedDelivery();
+  const total=subtotal+delivery;
+  const deliveryLabel=getDeliveryLabel();
+  const ongkirText=delivery===0?'Gratis':money(delivery);
+
+  let detailPesanan=ids.map(id=>{
+    const f=foods.find(x=>x.id==id);
+    return `- ${f.name} × ${cart[id]} = ${money(f.price*cart[id])}`;
+  }).join('\n');
+
+  const msg=`Halo Admin NutriMeal, saya ingin mengonfirmasi pesanan.
+
+DATA PELANGGAN
+Nama: ${name}
+No. HP: ${phone}
+Alamat: ${address}
+Pengiriman: ${deliveryLabel}
+Ongkir: ${ongkirText}
+
+DETAIL PESANAN
+${detailPesanan}
+
+Subtotal: ${money(subtotal)}
+Ongkir: ${ongkirText}
+TOTAL PEMBAYARAN: ${money(total)}
+Metode Pembayaran: QRIS
+
+Saya akan melampirkan bukti pembayaran pada chat WhatsApp ini.
+
+Mohon konfirmasi pesanan saya. Terima kasih.`;
+
+  const encoded=encodeURIComponent(msg);
+  const waUrl=`https://wa.me/${WA_ADMIN_NUMBER}?text=${encoded}`;
+  window.open(waUrl,'_blank');
+};
+
+/* ============ HERO CAROUSEL ============ */
+const heroSlides=[
+ {src:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=85',label:'🥦 Fresh & colorful',alt:'Foto salad sehat warna-warni'},
+ {src:'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1200&q=85',label:'🥗 Balanced meal',alt:'Semangkuk makanan sehat dengan sayuran'},
+ {src:'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=85',label:'💪 Stronger every day',alt:'Aktivitas latihan kekuatan di gym'}
+];let heroIndex=0;function setHero(i){heroIndex=(i+heroSlides.length)%heroSlides.length;const s=heroSlides[heroIndex];$('heroSlide').src=s.src;$('heroSlide').alt=s.alt;$('heroLabel').textContent=s.label;document.querySelectorAll('#heroDots button').forEach((b,j)=>b.classList.toggle('active',j===heroIndex))}$('heroPrev').onclick=()=>setHero(heroIndex-1);$('heroNext').onclick=()=>setHero(heroIndex+1);document.querySelectorAll('#heroDots button').forEach((b,i)=>b.onclick=()=>setHero(i));
+/* Auto-advance hero every 5s */
+setInterval(()=>setHero(heroIndex+1),5000);
+
+/* ============ INIT ============ */
+renderMenu();renderCart();
+</script>
+</body></html>

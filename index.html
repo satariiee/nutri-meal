@@ -167,7 +167,7 @@ Konfirmasi Pembayaran via WhatsApp
 <script>
 /* ============ CONFIG ============ */
 const WA_ADMIN_NUMBER = '6285159950600';
-const ONGKIR = 9250;
+const ONGKIR = 5300;
 
 /* ============ MERCHANTS & MENU DATA ============ */
 const merchants = [
@@ -195,9 +195,7 @@ const merchants = [
     address: 'PBB.',
     image: 'assets/chickfit.jpeg',
     items: [
-      { id: 3, name: 'The Trinity Clean Bowl', price: 20000, image: 'assets/chickfit.jpeg', pref: 'chicken' },
-      { id: 4, name: 'Chicken Kebab', price: 20000, image: 'assets/chickfit.jpeg', pref: 'chicken' },
-      { id: 5, name: 'Risol Ayam', price: 10000, image: 'assets/chickfit.jpeg', pref: 'chicken' }
+      { id: 3, name: 'The Trinity Clean Bowl', price: 21000, image: 'assets/chickfit.jpeg', pref: 'chicken' }
     ]
   },
   {
@@ -280,7 +278,8 @@ function renderMenu() {
       <div class="merchant-menu-grid">`;
 
     items.forEach(item => {
-      html += `<article class="card" style="border-radius:14px">
+      html += `<article class="card">
+        <div class="foodpic"><img loading="lazy" src="${item.image}" alt="${item.name}"></div>
         <div class="cardbody">
           <h3 class="foodname">${item.name}</h3>
           <div class="cardfoot">
@@ -484,7 +483,7 @@ $('waConfirmBtn').onclick = function () {
 
   let detailPesanan = '';
   Object.values(grouped).forEach(g => {
-    detailPesanan += `\nNama merchant: ${g.merchant.name}\nAlamat merchant: ${g.merchant.address}\n`;
+    detailPesanan += `\nNama merchant: ${g.merchant.name}\n`;
     g.items.forEach(id => {
       const item = itemMap[id];
       detailPesanan += `Nama menu: ${item.name}\nJumlah: ${cart[id]}\nHarga: ${money(item.price * cart[id])}\n`;
